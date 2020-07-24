@@ -29,14 +29,11 @@ jobs:
     - name: Test with pytest
       run: |
         pytest -c ingrid/setup.cfg
+        coveralls
 
     - name: List directory
       run: |
         ls -la
-
-    - name: List coverage
-      run: |
-        ls -la ingrid
 
     - name: Archive test results
       uses: actions/upload-artifact@v1
@@ -55,7 +52,7 @@ jobs:
       with:
         github-token: ${{ secrets.github_token }}
         # flag-name: run-${{ matrix.test_number }}
-        path-to-lcov: .coverage
+        # path-to-lcov: .coverage/
         parallel: true
 
   finish:
