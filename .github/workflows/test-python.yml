@@ -36,7 +36,9 @@ jobs:
 
     - name: List coverage
       run: |
-        ls -la .coverage
+        cd .coverage
+        ls -la
+        cd ../
 
     - name: Archive test results
       uses: actions/upload-artifact@v1
