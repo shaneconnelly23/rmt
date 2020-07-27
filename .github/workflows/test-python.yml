@@ -29,7 +29,6 @@ jobs:
     - name: Test with pytest
       run: |
         coverage run -m pytest -c ingrid/setup.cfg
-        coveralls
 
     - name: List directory
       run: |
